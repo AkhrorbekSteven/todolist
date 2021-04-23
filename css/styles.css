@@ -157,3 +157,12 @@ ul {
 .btn-clear:hover {
     opacity: 1;
 }
+.next {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.5) inset;
+}

@@ -8,17 +8,29 @@ html {
     margin: 0;
     padding: 0;
 }
+*::-webkit-scrollbar {
+    display: none;
+}
+*::-webkit-scrollbar:hover {
+    width: 8px;
+}
+*::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+*::-webkit-scrollbar-thumb {
+    background: #CFCFCF; 
+}
 ul {
     list-style-type: none;
 }
 .container {
-    min-height: 100vh;
     position: relative;
+    background-color: #2D414C;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .posts-list {
     min-height: 100vh;
     position: relative;
-    background-color: #2D414C;
     font-family: 'Josefin Sans', sans-serif;
 }
 .post {
@@ -36,27 +48,51 @@ ul {
     transform: translate(-50%, -50%);
     z-index: 9;
 }
+.all-post {
+    width: 1000px;
+    height: 200px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.5) inset;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.all-post:nth-child(2n) {
+    margin-left: 20px;
+}
+.all-post:nth-child(2n + 1) {
+    margin-left: auto;
+    margin-right: 20px;
+}
 h1 {
     text-align: center;
     margin-bottom: 10px;
-}
-h1 span:first-child {
-    margin-right: 5px;
-    color: red;
 }
 p {
     text-align: center;
     font-size: 20px;
     color: #2D414C;
 }
-.zmdi {
+.up-btn,
+.down-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 400px;
     border: none;
     padding: 10px;
     border-radius: 4px;
     box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.5) inset;
+}
+.previous-post {
+    transform: translate(-50%, -50%) translateY(-100px);
+    z-index: 9;
+}
+.current-post {
+    transform: translate(-50%, -50%) translateY(0) scale(1.2);
+    z-index: 99;
+}
+.next-post {
+    transform: translate(-50%, -50%) translateY(100px);
+    z-index: 9;
 }
 .zmdi:hover {
     cursor: pointer;
@@ -66,4 +102,15 @@ p {
 }
 .down-btn {
     left: 50px;
+}
+a span {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    z-index: 100;
+    display: flex;
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.5) inset;
 }
